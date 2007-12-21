@@ -12,6 +12,7 @@ License:	GPL
 Group:		Games/Strategy
 URL:		http://www.glest.org/
 Source0:	glest_data_%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
 %description
