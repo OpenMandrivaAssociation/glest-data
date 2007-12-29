@@ -1,7 +1,7 @@
 %define	name	glest-data
 %define	version	2.0.1
 %define	ver	%{version}
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 %define	Summary	Game data for Glest
 
 Name:		%{name}
@@ -35,6 +35,7 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT%{_gamesdatadir}/glest
 cp -fr * $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
 rm -fr  $RPM_BUILD_ROOT%{_gamesdatadir}/glest/docs
+rm -f $RPM_BUILD_ROOT%{_gamesdatadir}/glest/glest.ini
 
 %clean
 rm -rf $RPM_BUILD_ROOT
