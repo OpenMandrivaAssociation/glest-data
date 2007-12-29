@@ -1,7 +1,7 @@
 %define	name	glest-data
 %define	version	2.0.1
 %define	ver	%{version}
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 %define	Summary	Game data for Glest
 
 Name:		%{name}
@@ -32,25 +32,14 @@ for playing the game.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-  
-install -m755 -d $RPM_BUILD_ROOT%{_gamesdatadir}/glest/data/
-install -m755 -d $RPM_BUILD_ROOT%{_gamesdatadir}/glest/maps/
-install -m755 -d $RPM_BUILD_ROOT%{_gamesdatadir}/glest/techs/
-install -m755 -d $RPM_BUILD_ROOT%{_gamesdatadir}/glest/tilesets/
-install -m644 configuration.xml $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
-
-cp -a data/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/data/
-cp -a maps/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/maps/
-cp -a techs/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/techs/
-cp -a tilesets/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/tilesets/
-
-#install -m666 glest.log $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
+cp -fr * $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
+rm -fr  $RPM_BUILD_ROOT%{_gamesdatadir}/glest/docs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc docs/readme.txt docs/license.txt docs/tech/*
+%doc docs/*
 %{_gamesdatadir}/glest/
 
