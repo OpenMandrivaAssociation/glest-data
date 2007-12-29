@@ -32,6 +32,7 @@ for playing the game.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+mkdir -p $RPM_BUILD_ROOT%{_gamesdatadir}/glest
 cp -fr * $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
 rm -fr  $RPM_BUILD_ROOT%{_gamesdatadir}/glest/docs
 
