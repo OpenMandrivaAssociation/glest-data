@@ -1,5 +1,5 @@
 %define	name	glest-data
-%define	version	2.0.0
+%define	version	2.0.1
 %define	ver	%{version}
 %define	release	%mkrel 1
 %define	Summary	Game data for Glest
@@ -11,7 +11,7 @@ Summary:	%{Summary}
 License:	GPL
 Group:		Games/Strategy
 URL:		http://www.glest.org/
-Source0:	glest_data_%{version}.tar.bz2
+Source0:	glest_data_%{version}.zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
@@ -44,7 +44,7 @@ cp -a maps/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/maps/
 cp -a techs/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/techs/
 cp -a tilesets/* $RPM_BUILD_ROOT%{_gamesdatadir}/glest/tilesets/
 
-install -m666 glest.log $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
+#install -m666 glest.log $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
