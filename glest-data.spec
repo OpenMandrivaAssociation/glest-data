@@ -1,17 +1,11 @@
-%define	name	glest-data
-%define	version	2.0.1
-%define	ver	%{version}
-%define	release	%mkrel 3
-%define	Summary	Game data for Glest
-
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-Summary:	%{Summary}
-License:	GPL
+Summary:	Game data for Glest
+Name:		glest-data
+Version:	3.1.1
+Release:	%mkrel 1
+License:	GPLv2+
 Group:		Games/Strategy
 URL:		http://www.glest.org/
-Source0:	glest_data_%{version}.zip
+Source0:	http://downloads.sourceforge.net/glest/glest_data_%{version}.zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildArch:	noarch
 
@@ -31,17 +25,16 @@ for playing the game.
 # nothing to do here
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_gamesdatadir}/glest
-cp -fr * $RPM_BUILD_ROOT%{_gamesdatadir}/glest/
-rm -fr  $RPM_BUILD_ROOT%{_gamesdatadir}/glest/docs
-rm -f $RPM_BUILD_ROOT%{_gamesdatadir}/glest/glest.ini
+rm -rf %{buildroot}
+mkdir -p %{buildroot}%{_gamesdatadir}/glest
+cp -fr * %{buildroot}%{_gamesdatadir}/glest/
+rm -fr  %{buildroot}%{_gamesdatadir}/glest/docs
+rm -f %{buildroot}%{_gamesdatadir}/glest/glest.ini
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(644,root,root,755)
 %doc docs/*
 %{_gamesdatadir}/glest/
-
