@@ -1,7 +1,7 @@
 Summary:	Game data for Glest
 Name:		glest-data
 Version:	3.1.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Games/Strategy
 URL:		http://www.glest.org/
@@ -20,6 +20,12 @@ for playing the game.
 
 %prep
 %setup -q -n glest_game
+
+# fix endings
+find docs -type f | xargs sed -i -e "s/\r//g"
+# UTF-8
+recode ISO-8859-1..UTF-8 docs/*.txt
+mv data/lang/espa?ol.lng data/lang/espaol.lng
 
 %build
 # nothing to do here
