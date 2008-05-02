@@ -7,6 +7,7 @@ Group:		Games/Strategy
 URL:		http://www.glest.org/
 Source0:	http://downloads.sourceforge.net/glest/glest_data_%{version}.zip
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	recode
 BuildArch:	noarch
 
 %description
@@ -25,7 +26,7 @@ for playing the game.
 find docs -type f | xargs sed -i -e "s/\r//g"
 # UTF-8
 recode ISO-8859-1..UTF-8 docs/*.txt
-mv data/lang/espa?ol.lng data/lang/espaol.lng
+mv data/lang/espa?ol.lng data/lang/espanol.lng
 
 %build
 # nothing to do here
