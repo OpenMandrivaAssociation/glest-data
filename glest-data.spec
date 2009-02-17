@@ -1,14 +1,14 @@
 Summary:	Game data for Glest
 Name:		glest-data
-Version:	3.1.2
-Release:	%mkrel 3
+Version:	3.2.1
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Games/Strategy
 URL:		http://www.glest.org/
 Source0:	http://downloads.sourceforge.net/glest/glest_data_%{version}.zip
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	recode
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Glest is a 3d OpenGL real time strategy game. It takes place in a 
