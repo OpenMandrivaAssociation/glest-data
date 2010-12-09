@@ -1,7 +1,7 @@
 Summary:	Game data for Glest
 Name:		glest-data
 Version:	3.2.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Games/Strategy
 URL:		http://www.glest.org/
