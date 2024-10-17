@@ -4,7 +4,7 @@ Version:	3.2.1
 Release:	%mkrel 3
 License:	GPLv2+
 Group:		Games/Strategy
-URL:		http://www.glest.org/
+URL:		https://www.glest.org/
 Source0:	http://downloads.sourceforge.net/glest/glest_data_%{version}.zip
 BuildRequires:	recode
 BuildArch:	noarch
